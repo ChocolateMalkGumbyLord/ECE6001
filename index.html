@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunlight Simulator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f9fa;
+        }
+        header {
+            background: linear-gradient(90deg, #ffdd59, #ffba00);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+        .product {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid #ffd700;
+            box-shadow: 0 4px 8px rgba(255, 223, 0, 0.4);
+        }
+        .product h1 {
+            font-size: 2rem;
+            margin: 1rem 0;
+            color: #ff9900;
+        }
+        .product p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+        .product .price {
+            font-size: 1.5rem;
+            color: #ff5722;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+        .buy-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            color: white;
+            background: linear-gradient(90deg, #ffba00, #ff6f00);
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(255, 165, 0, 0.3);
+        }
+        .buy-btn:hover {
+            background: linear-gradient(90deg, #ffd700, #ff4500);
+            box-shadow: 0 8px 16px rgba(255, 140, 0, 0.5);
+        }
+        .product-details {
+            margin-top: 4rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .product-details h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #ff9900;
+        }
+        .product-details p, .product-details ul {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #444;
+        }
+        .product-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        .product-details ul li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .product-details ul li:before {
+            content: "☀️";
+            margin-right: 0.5rem;
+            color: #ffcc00;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: linear-gradient(90deg, #ffba00, #ff6f00);
+            color: white;
+            margin-top: 2rem;
+        }
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sunlight Simulator</h1>
+</header>
+
+<div class="container">
+    <!-- Product Section -->
+    <div class="product">
+        <img src="https://i.imgur.com/ubj5rQA.jpeg" alt="Sunlight Simulator">
+        <h1>Bring the Sun Indoors</h1>
+        <p>
+            The Sunlight Simulator is a light that fits inside your window curtain, mimicking natural sunlight. 
+            Designed for those with seasonal affective disorder (SAD) or anyone seeking to enhance productivity with the uplifting power of sunlight.
+        </p>
+        <p class="price">$50</p>
+        <a href="#details" class="buy-btn">Learn More</a>
+    </div>
+
+    <!-- Product Details Section -->
+    <div id="details" class="product-details">
+        <h2>Why Choose the Sunlight Simulator?</h2>
+        <p>
+            During darker months or cloudy days, the lack of sunlight can negatively affect mood and productivity. 
+            The Sunlight Simulator provides warm, natural light that mimics the sun, helping to:
+        </p>
+        <ul>
+            <li>Improve mood and combat seasonal affective disorder (SAD).</li>
+            <li>Boost productivity and focus in any environment.</li>
+            <li>Fit seamlessly into your existing window curtain setup.</li>
+            <li>Offer energy-efficient operation and long-lasting performance.</li>
+        </ul>
+        <p>
+            It's time to brighten your space and your day with the Sunlight Simulator. 
+            Experience the benefits of sunlight whenever you need it most.
+        </p>
+    </div>
+
+    <!-- Purchase Section -->
+    <div id="purchase" class="purchase-section">
+        <h2>Ready to Experience the Sunlight Simulator?</h2>
+        <p>To purchase this product, visit our checkout page. Thank you for your interest!</p>
+        <a href="mvp.html" 
+           class="buy-btn" 
+           target="_blank" 
+           onclick="logClick()">Go to Checkout</a>
+        <script>
+            function logClick() {
+                fetch('https://script.google.com/macros/s/AKfycbyFHCX_g14QVhMVPTUvVuQzN9vZkFwAFVMeIysqACi-MeJ7UPrv4v7hZzq4P0VQpM4/exec', { method: 'POST' })
+                    .then(response => response.json())
+                    .then(data => console.log('Click logged:', data))
+                    .catch(error => console.error('Error logging click:', error));
+            }
+        </script>
+    </div>
+</div>
+
+<footer>
+    <p>© 2024 Sunlight Simulator. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
